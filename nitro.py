@@ -31,7 +31,8 @@ All valid links: {"".join(valid_links) or "Nothing find."}
 """) # <- Результат всего этого
 
 loop = asyncio.get_event_loop()
-loop.run_until_complete(main()) # Эти две строки для запуска 
+loop.run_until_complete(main()) # Эти три строки для запуска 
+loop.close()
 
 input('Press any key for exit') # На случай, если вы будете компилировать в .exe как я
 

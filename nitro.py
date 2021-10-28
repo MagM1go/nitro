@@ -26,7 +26,7 @@ async def main(): # Создание асинхронной функции
 Valid links: {len(valid_links)}
 Invalid links: {len(invalid_links)}
 
-All valid links: {"".join(valid_links) or "Nothing find."}
+All valid links: {"\n".join(valid_links) or "Nothing find."}
 
 """) # <- Результат всего этого
 

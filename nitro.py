@@ -9,6 +9,8 @@ a = int(input('How many codes you delivering?: ')) # Думаю не стоит 
 invalid_links = [] 
 valid_links = [] # Этих двух массивой то же самое касается
 
+endl = '\n'
+
 async def main(): # Создание асинхронной функции
     for i in range(a): # Цикл
         j = "".join([i for i in string.ascii_letters + string.digits]) # Проходимся по буковкам и циферкам
@@ -21,14 +23,7 @@ async def main(): # Создание асинхронной функции
                 except:
                     print(f"Valid: https://discord.gift/{codes}")
                     valid_links.append(f'https://discord.gift/{codes}') # 6 Строк выше обычная проверка и занесение в массив
-    print(f"""
-
-Valid links: {len(valid_links)}
-Invalid links: {len(invalid_links)}
-
-All valid links: {"\n".join(valid_links) or "Nothing find."}
-
-""") # <- Результат всего этого
+    print(f'Valid links: {len(valid_links)}\nInvalid links: {len(invalid_links)}\nAll valid links: {endl.join(valid_links) or "Nothing find."}') # <- Результат всего этого
 
 loop = asyncio.get_event_loop()
 loop.run_until_complete(main()) # Эти три строки для запуска 
